@@ -14,7 +14,7 @@ public class FifthTask {
         return splittedInput.size() == 4 ? false : true;
     }
 
-    private static void printCollection(List<Integer> list) {
+    public static void printCollection(List<Integer> list) {
         for (Integer elem : list) {
             System.out.print(elem + " ");
         }
@@ -23,8 +23,9 @@ public class FifthTask {
     public static void main(String[] args) {
         List<Integer> resultNumbers = new ArrayList<>();
         for (; start < finish; ) {
-            if (!hasDuplicates(String.valueOf(start++))) {
-                resultNumbers.add(start);
+            int current = start++;
+            if (!hasDuplicates(String.valueOf(current))) {
+                resultNumbers.add(current);
             }
         }
         printCollection(resultNumbers);
